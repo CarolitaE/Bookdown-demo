@@ -1,0 +1,6 @@
+
+language:
+  ui:
+    chapter_name: "Chapter "
+output_dir: "docs" #in order to publish to git-  github pages to find it
+#need this title specifically in order to publish. underscore v important

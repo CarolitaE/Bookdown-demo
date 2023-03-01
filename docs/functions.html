@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Functions | My bookdown</title>
+  <meta name="description" content="This is an example of using the bookdown package. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Functions | My bookdown" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is an example of using the bookdown package. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Functions | My bookdown" />
+  
+  <meta name="twitter:description" content="This is an example of using the bookdown package. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Carolita Landers" />
+
+
+<meta name="date" content="2023-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="apis.html"/>
+<link rel="next" href="iterations.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>My Intro</a></li>
+<li class="chapter" data-level="1" data-path="apis-and-iteration.html"><a href="apis-and-iteration.html"><i class="fa fa-check"></i><b>1</b> API’s and Iteration</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="apis-and-iteration.html"><a href="apis-and-iteration.html#lesson-objectives"><i class="fa fa-check"></i><b>1.0.1</b> Lesson Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="apis.html"><a href="apis.html"><i class="fa fa-check"></i><b>2</b> APIs</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="apis.html"><a href="apis.html#nps-visitation-data"><i class="fa fa-check"></i><b>2.1</b> NPS Visitation Data</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="apis.html"><a href="apis.html#exercise-1"><i class="fa fa-check"></i><b>2.1.1</b> Exercise #1</a></li>
+<li class="chapter" data-level="2.1.2" data-path="apis.html"><a href="apis.html#exercise-2"><i class="fa fa-check"></i><b>2.1.2</b> Exercise #2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#functionize-api-pulls"><i class="fa fa-check"></i><b>3.1</b> Functionize API Pulls</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#exercise-3"><i class="fa fa-check"></i><b>3.1.1</b> Exercise #3</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#exercise-4"><i class="fa fa-check"></i><b>3.1.2</b> Exercise #4</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#function-defaults"><i class="fa fa-check"></i><b>3.2</b> Function Defaults</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="functions.html"><a href="functions.html#exercise-5"><i class="fa fa-check"></i><b>3.2.1</b> Exercise #5</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="iterations.html"><a href="iterations.html"><i class="fa fa-check"></i><b>4</b> Iterations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="iterations.html"><a href="iterations.html#for-loops"><i class="fa fa-check"></i><b>4.1</b> For loops</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="iterations.html"><a href="iterations.html#exercise-6"><i class="fa fa-check"></i><b>4.1.1</b> Exercise #6</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="iterations.html"><a href="iterations.html#mapping"><i class="fa fa-check"></i><b>4.2</b> Mapping</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="iterations.html"><a href="iterations.html#exercise-7"><i class="fa fa-check"></i><b>4.2.1</b> Exercise #7</a></li>
+<li class="chapter" data-level="4.2.2" data-path="iterations.html"><a href="iterations.html#lesson-objectives-1"><i class="fa fa-check"></i><b>4.2.2</b> Lesson Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="iterations.html"><a href="iterations.html#pulling-in-necessary-packages-and-data-sets"><i class="fa fa-check"></i><b>4.3</b> Pulling in necessary packages and data sets</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="iterations.html"><a href="iterations.html#exercise-1-1"><i class="fa fa-check"></i><b>4.3.1</b> Exercise #1</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="iterations.html"><a href="iterations.html#exploring-our-data"><i class="fa fa-check"></i><b>4.4</b> Exploring our data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="iterations.html"><a href="iterations.html#exercise-2-1"><i class="fa fa-check"></i><b>4.4.1</b> Exercise #2</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="iterations.html"><a href="iterations.html#pivoting"><i class="fa fa-check"></i><b>4.5</b> Pivoting</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="iterations.html"><a href="iterations.html#exercise-3-1"><i class="fa fa-check"></i><b>4.5.1</b> Exercise #3</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="iterations.html"><a href="iterations.html#joining"><i class="fa fa-check"></i><b>4.6</b> Joining</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="iterations.html"><a href="iterations.html#exercise-4-1"><i class="fa fa-check"></i><b>4.6.1</b> Exercise #4</a></li>
+<li class="chapter" data-level="4.6.2" data-path="iterations.html"><a href="iterations.html#exercise-5-1"><i class="fa fa-check"></i><b>4.6.2</b> Exercise #5</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="iterations.html"><a href="iterations.html#lesson-objectives-2"><i class="fa fa-check"></i><b>4.7</b> Lesson Objectives:</a></li>
+<li class="chapter" data-level="4.8" data-path="iterations.html"><a href="iterations.html#streaflow-datasets"><i class="fa fa-check"></i><b>4.8</b> Streaflow Datasets</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="iterations.html"><a href="iterations.html#usgs-dataretrieval-r-package"><i class="fa fa-check"></i><b>4.8.1</b> USGS <code>dataRetrieval</code> R package</a></li>
+<li class="chapter" data-level="4.8.2" data-path="iterations.html"><a href="iterations.html#cdwrs-api"><i class="fa fa-check"></i><b>4.8.2</b> CDWR’s API</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exercise-1-2.html"><a href="exercise-1-2.html"><i class="fa fa-check"></i><b>5</b> Exercise #1</a></li>
+<li class="chapter" data-level="6" data-path="exercise-2-2.html"><a href="exercise-2-2.html"><i class="fa fa-check"></i><b>6</b> Exercise #2</a></li>
+<li class="chapter" data-level="7" data-path="exercise-3-2.html"><a href="exercise-3-2.html"><i class="fa fa-check"></i><b>7</b> Exercise #3</a></li>
+<li class="chapter" data-level="8" data-path="exercise-4-2.html"><a href="exercise-4-2.html"><i class="fa fa-check"></i><b>8</b> Exercise #4</a></li>
+<li class="chapter" data-level="9" data-path="exercise-5-2.html"><a href="exercise-5-2.html"><i class="fa fa-check"></i><b>9</b> Exercise #5</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">My bookdown</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functions" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Functions<a href="functions.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>You may find yourself thinking, <em>“Wow, exercise 1 was overkill!”</em> Indeed, you had to run several lines of code that were nearly identical to what was shown upstream; the only thing you needed to change from one year to the next was the year itself. This sort of redundant coding is not good coding practice. Instead of copying and pasting many coding steps over and over again and tweaking just a tiny portion of it, we can write <em>functions</em> that combine many coding steps into just one command. The benefits of reducing redundant code in this way are threefold. As Grolemund &amp; Wickham describe in their book, <a href="https://r4ds.had.co.nz/"><em>R for Data Science</em></a>:</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>It’s easier to see the intent of your code, because your eyes are drawn to what’s different, not what stays the same.</li>
+<li>It’s easier to respond to changes in requirements. As your needs change, you only need to make changes in one place, rather than remembering to change every place that you copied-and-pasted the code.</li>
+<li>You’re likely to have fewer bugs because each line of code is used in more places.</li>
+</ol>
+</blockquote>
+<p><em>Functions</em> provide the option of changing just a minor part of the code base from one run to the next. Think of the <code>GET()</code> function in <code>httr</code>: it is a function that has code under-the-hood so that it isn’t necessary to write out the raw code each time we use it. Instead, we call out the function’s name (<code>GET()</code>), and the necessary argument within that function that tweaks the code to fit it to our needs (<code>url = "&lt;SOME_URL_WE_CHOOSE&gt;"</code>).</p>
+<div id="functionize-api-pulls" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Functionize API Pulls<a href="functions.html#functionize-api-pulls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s try making a function called <code>parkwide_visitation()</code> that pulls in NPS-wide visitation data for a year of choice. To develop a function requires specific formatting:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="functions.html#cb12-1" aria-hidden="true" tabindex="-1"></a>parkwide_visitation <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">year=</span> <span class="dv">2021</span>){</span>
+<span id="cb12-2"><a href="functions.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  raw_data <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">GET</span>(<span class="at">url =</span> <span class="fu">paste0</span>( <span class="st">&quot;https://irmaservices.nps.gov/v3/rest/stats/total/&quot;</span>,year))</span>
+<span id="cb12-3"><a href="functions.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  unpacked_data<span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">content</span>(raw_data, <span class="at">as=</span> <span class="st">&quot;text&quot;</span>,<span class="at">encoding=</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb12-4"><a href="functions.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  final_data<span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(unpacked_data)</span>
+<span id="cb12-5"><a href="functions.html#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="functions.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-7"><a href="functions.html#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="functions.html#cb12-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-9"><a href="functions.html#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(final_data)</span>
+<span id="cb12-10"><a href="functions.html#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="functions.html#cb12-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-12"><a href="functions.html#cb12-12" aria-hidden="true" tabindex="-1"></a>test<span class="ot">&lt;-</span><span class="fu">parkwide_visitation</span>(<span class="at">year =</span> <span class="dv">2010</span>)</span></code></pre></div>
+<p>… where NAME is what we want to name the function; ARGUMENTS are the variables in the code that get “tweaked”; ACTIONS are the lines of code we want the function to perform (which includes our ARGUMENTS); and the OUTPUT is the object we want as the final outcome of running the function.</p>
+<p>For <code>parkwide_visitation()</code>, we will use our upstream code as the basis for our function, but with a few minor yet extremely important tweaks:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="functions.html#cb13-1" aria-hidden="true" tabindex="-1"></a>parkwide_visitation <span class="ot">&lt;-</span> <span class="cf">function</span>(year){</span>
+<span id="cb13-2"><a href="functions.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="functions.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># pull in the data</span></span>
+<span id="cb13-4"><a href="functions.html#cb13-4" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">GET</span>(<span class="at">url =</span> </span>
+<span id="cb13-5"><a href="functions.html#cb13-5" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># parse out year so that it can be chosen with the &quot;year&quot; argument, using paste0()</span></span>
+<span id="cb13-6"><a href="functions.html#cb13-6" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">paste0</span>(<span class="st">&quot;https://irmaservices.nps.gov/v3/rest/stats/total/&quot;</span>, year))</span>
+<span id="cb13-7"><a href="functions.html#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="functions.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># convert content to text</span></span>
+<span id="cb13-9"><a href="functions.html#cb13-9" aria-hidden="true" tabindex="-1"></a>extracted_data <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">content</span>(raw_data, <span class="at">as =</span> <span class="st">&quot;text&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>) </span>
+<span id="cb13-10"><a href="functions.html#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="functions.html#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># parse text from JSON to data frame</span></span>
+<span id="cb13-12"><a href="functions.html#cb13-12" aria-hidden="true" tabindex="-1"></a>final_data <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(extracted_data)</span>
+<span id="cb13-13"><a href="functions.html#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="functions.html#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(final_data)</span>
+<span id="cb13-15"><a href="functions.html#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="functions.html#cb13-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>In the above function, our first object, <code>raw_data</code>, now changes based on how we define our year argument. We accomplish this through <code>paste0()</code>, which takes listed objects, transforms them into characters (if they aren’t already), and concatenates them into a single character string. For example:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="functions.html#cb14-1" aria-hidden="true" tabindex="-1"></a>my_sentence <span class="ot">&lt;-</span> <span class="st">&quot;I need at least&quot;</span></span>
+<span id="cb14-2"><a href="functions.html#cb14-2" aria-hidden="true" tabindex="-1"></a>my_other_sentence <span class="ot">&lt;-</span> <span class="st">&quot;pints of ice cream a day&quot;</span></span>
+<span id="cb14-3"><a href="functions.html#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="functions.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(my_sentence, <span class="st">&quot; &quot;</span>, <span class="dv">08</span>, <span class="st">&quot; &quot;</span>, my_other_sentence, <span class="st">&quot;!&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;I need at least 8 pints of ice cream a day!&quot;</code></pre>
+<p>So, if we make <code>year = 2021</code> in our <code>parkwide_visitation()</code> function, the year object becomes the number 2021, which makes the <code>paste0()</code> output “<a href="https://irmaservices.nps.gov/v3/rest/stats/total/2021" class="uri">https://irmaservices.nps.gov/v3/rest/stats/total/2021</a>”, which subsequently pulls data for 2021. In other words, we can now pull visitation data for any year with just one line of code!</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="functions.html#cb16-1" aria-hidden="true" tabindex="-1"></a>pull_2018 <span class="ot">&lt;-</span> <span class="fu">parkwide_visitation</span>(<span class="at">year =</span> <span class="dv">2018</span>)</span>
+<span id="cb16-2"><a href="functions.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="functions.html#cb16-3" aria-hidden="true" tabindex="-1"></a>pull_1980 <span class="ot">&lt;-</span> <span class="fu">parkwide_visitation</span>(<span class="at">year =</span> <span class="dv">1980</span>)</span>
+<span id="cb16-4"><a href="functions.html#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="functions.html#cb16-5" aria-hidden="true" tabindex="-1"></a>pull_1992 <span class="ot">&lt;-</span> <span class="fu">parkwide_visitation</span>(<span class="at">year =</span> <span class="dv">1992</span>)</span>
+<span id="cb16-6"><a href="functions.html#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="functions.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ... and so on!</span></span></code></pre></div>
+<div id="exercise-3" class="section level3 hasAnchor" number="3.1.1" style="color: maroon">
+<h3><span class="header-section-number">3.1.1</span> Exercise #3<a href="functions.html#exercise-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Create a function called <code>unit_visitation()</code> that pulls park-specific visitation data for any park, across any time frame. For a list of all park codes, download <a href="https://www.nps.gov/aboutus/foia/upload/NPS-Unit-List.xlsx">this spreadsheet</a>. (Hint 1: functions can have multiple arguments. Hint 2: what’s the difference between <code>05</code> and <code>"05"</code>?)</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="functions.html#cb17-1" aria-hidden="true" tabindex="-1"></a>unit_visitation<span class="ot">&lt;-</span> <span class="cf">function</span>(park,<span class="at">startmonth =</span> <span class="st">&quot;01&quot;</span>,startyear,<span class="at">endmonth=</span><span class="st">&quot;12&quot;</span>,endyear){</span>
+<span id="cb17-2"><a href="functions.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  unit_raw<span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">GET</span>(<span class="fu">paste0</span>(<span class="at">url=</span><span class="st">&quot;https://irmaservices.nps.gov/v3/rest/stats/visitation?unitCodes=&quot;</span> ,park,<span class="st">&quot;&amp;startMonth=&quot;</span>,startmonth, <span class="st">&quot;&amp;startYear=&quot;</span>,startyear,<span class="st">&quot;&amp;endMonth=&quot;</span>, endmonth,<span class="st">&quot;&amp;endYear=&quot;</span>,endyear))</span>
+<span id="cb17-3"><a href="functions.html#cb17-3" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="cb17-4"><a href="functions.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  unpacked_unit<span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">content</span>(unit_raw,<span class="at">as=</span> <span class="st">&quot;text&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb17-5"><a href="functions.html#cb17-5" aria-hidden="true" tabindex="-1"></a>  final_unit<span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(unpacked_unit)</span>
+<span id="cb17-6"><a href="functions.html#cb17-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-7"><a href="functions.html#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(final_unit)}</span></code></pre></div>
+</div>
+<div id="exercise-4" class="section level3 hasAnchor" number="3.1.2" style="color: maroon">
+<h3><span class="header-section-number">3.1.2</span> Exercise #4<a href="functions.html#exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Using <code>unit_visitation()</code>, pull in visitation data for Rocky Mountain National Park (ROMO), Everglades National Park (EVER), and Theodore Roosevelt National Park (THRO) from 1990 through 2021.</strong></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="functions.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unit_visitation</span>(<span class="at">park=</span> <span class="st">&quot;ROMO&quot;</span>,<span class="at">startmonth =</span>  <span class="st">&quot;01&quot;</span>, <span class="at">startyear =</span> <span class="st">&quot;1990&quot;</span>, <span class="at">endmonth =</span> <span class="st">&quot;01&quot;</span>,<span class="at">endyear =</span> <span class="st">&quot;2021&quot;</span>)</span></code></pre></div>
+<pre><code>##     Month NonRecreationVisitors RecreationVisitors UnitCode          UnitName Year
+## 1       1                 10956              53565     ROMO Rocky Mountain NP 1990
+## 2       2                  9343              49896     ROMO Rocky Mountain NP 1990
+## 3       3                  7247              65280     ROMO Rocky Mountain NP 1990
+## 4       4                  4681              60274     ROMO Rocky Mountain NP 1990
+## 5       5                 11465             108881     ROMO Rocky Mountain NP 1990
+## 6       6                 17173             435279     ROMO Rocky Mountain NP 1990
+## 7       7                 28031             560806     ROMO Rocky Mountain NP 1990
+## 8       8                 30676             646018     ROMO Rocky Mountain NP 1990
+## 9       9                 13162             392873     ROMO Rocky Mountain NP 1990
+## 10     10                  9608             164130     ROMO Rocky Mountain NP 1990
+## 11     11                  5749              73064     ROMO Rocky Mountain NP 1990
+## 12     12                  5845              37257     ROMO Rocky Mountain NP 1990
+## 13      1                  8071              50910     ROMO Rocky Mountain NP 1991
+## 14      2                  6467              57547     ROMO Rocky Mountain NP 1991
+## 15      3                  8492              56241     ROMO Rocky Mountain NP 1991
+## 16      4                  6231              67986     ROMO Rocky Mountain NP 1991
+## 17      5                 13124             118351     ROMO Rocky Mountain NP 1991
+## 18      6                 18645             434810     ROMO Rocky Mountain NP 1991
+## 19      7                 28663             614118     ROMO Rocky Mountain NP 1991
+## 20      8                 25541             642734     ROMO Rocky Mountain NP 1991
+## 21      9                 19042             385524     ROMO Rocky Mountain NP 1991
+## 22     10                  9185             237608     ROMO Rocky Mountain NP 1991
+## 23     11                  2815              43136     ROMO Rocky Mountain NP 1991
+## 24     12                  5754              42816     ROMO Rocky Mountain NP 1991
+## 25      1                  9398              60038     ROMO Rocky Mountain NP 1992
+## 26      2                  9674              48476     ROMO Rocky Mountain NP 1992
+## 27      3                  6444              58478     ROMO Rocky Mountain NP 1992
+## 28      4                  4797              80217     ROMO Rocky Mountain NP 1992
+## 29      5                 11308             160788     ROMO Rocky Mountain NP 1992
+## 30      6                 15198             408630     ROMO Rocky Mountain NP 1992
+## 31      7                 28690             606764     ROMO Rocky Mountain NP 1992
+## 32      8                 24688             623634     ROMO Rocky Mountain NP 1992
+## 33      9                 20790             440843     ROMO Rocky Mountain NP 1992
+## 34     10                 12764             218570     ROMO Rocky Mountain NP 1992
+## 35     11                  4346              47490     ROMO Rocky Mountain NP 1992
+## 36     12                  5778              34940     ROMO Rocky Mountain NP 1992
+## 37      1                  9015              53780     ROMO Rocky Mountain NP 1993
+## 38      2                  8490              39962     ROMO Rocky Mountain NP 1993
+## 39      3                  7375              52511     ROMO Rocky Mountain NP 1993
+## 40      4                  5256              65790     ROMO Rocky Mountain NP 1993
+## 41      5                  7498             120708     ROMO Rocky Mountain NP 1993
+## 42      6                 20483             424670     ROMO Rocky Mountain NP 1993
+## 43      7                 31510             623451     ROMO Rocky Mountain NP 1993
+## 44      8                 36845             654327     ROMO Rocky Mountain NP 1993
+## 45      9                 22219             423570     ROMO Rocky Mountain NP 1993
+## 46     10                 11741             230972     ROMO Rocky Mountain NP 1993
+## 47     11                  4239              48776     ROMO Rocky Mountain NP 1993
+## 48     12                  5854              41825     ROMO Rocky Mountain NP 1993
+## 49      1                  9492              66336     ROMO Rocky Mountain NP 1994
+## 50      2                  8488              46474     ROMO Rocky Mountain NP 1994
+## 51      3                  7359              64501     ROMO Rocky Mountain NP 1994
+## 52      4                  5214              73383     ROMO Rocky Mountain NP 1994
+## 53      5                 12081             140442     ROMO Rocky Mountain NP 1994
+## 54      6                 16073             454741     ROMO Rocky Mountain NP 1994
+## 55      7                 26679             637208     ROMO Rocky Mountain NP 1994
+## 56      8                 38247             691826     ROMO Rocky Mountain NP 1994
+## 57      9                 35752             486600     ROMO Rocky Mountain NP 1994
+## 58     10                 12793             200637     ROMO Rocky Mountain NP 1994
+## 59     11                  6187              65256     ROMO Rocky Mountain NP 1994
+## 60     12                  6880              41046     ROMO Rocky Mountain NP 1994
+## 61      1                  6110              72264     ROMO Rocky Mountain NP 1995
+## 62      2                  6110              55526     ROMO Rocky Mountain NP 1995
+## 63      3                  4300              62216     ROMO Rocky Mountain NP 1995
+## 64      4                  3040              63517     ROMO Rocky Mountain NP 1995
+## 65      5                  6820             107774     ROMO Rocky Mountain NP 1995
+## 66      6                  9309             401034     ROMO Rocky Mountain NP 1995
+## 67      7                 15637             643304     ROMO Rocky Mountain NP 1995
+## 68      8                 35836             718453     ROMO Rocky Mountain NP 1995
+## 69      9                 18281             404990     ROMO Rocky Mountain NP 1995
+## 70     10                 11162             237056     ROMO Rocky Mountain NP 1995
+## 71     11                  7043              69520     ROMO Rocky Mountain NP 1995
+## 72     12                  6630              42515     ROMO Rocky Mountain NP 1995
+## 73      1                  9408              50604     ROMO Rocky Mountain NP 1996
+## 74      2                  8293              56462     ROMO Rocky Mountain NP 1996
+## 75      3                  7368              69517     ROMO Rocky Mountain NP 1996
+## 76      4                  7317              73462     ROMO Rocky Mountain NP 1996
+## 77      5                 13786             177831     ROMO Rocky Mountain NP 1996
+## 78      6                 24138             442730     ROMO Rocky Mountain NP 1996
+## 79      7                 34807             669291     ROMO Rocky Mountain NP 1996
+## 80      8                 36317             658613     ROMO Rocky Mountain NP 1996
+## 81      9                 26050             405585     ROMO Rocky Mountain NP 1996
+## 82     10                 12166             194353     ROMO Rocky Mountain NP 1996
+## 83     11                  5904              61799     ROMO Rocky Mountain NP 1996
+## 84     12                  6476              63508     ROMO Rocky Mountain NP 1996
+## 85      1                  9041              60995     ROMO Rocky Mountain NP 1997
+## 86      2                  5912              55496     ROMO Rocky Mountain NP 1997
+## 87      3                 10246              82957     ROMO Rocky Mountain NP 1997
+## 88      4                  4570              54619     ROMO Rocky Mountain NP 1997
+## 89      5                 10020             182301     ROMO Rocky Mountain NP 1997
+## 90      6                 16702             477849     ROMO Rocky Mountain NP 1997
+## 91      7                 27457             672256     ROMO Rocky Mountain NP 1997
+## 92      8                 32563             635015     ROMO Rocky Mountain NP 1997
+## 93      9                 21495             408657     ROMO Rocky Mountain NP 1997
+## 94     10                 10298             211588     ROMO Rocky Mountain NP 1997
+## 95     11                  9683              65166     ROMO Rocky Mountain NP 1997
+## 96     12                 10182              58455     ROMO Rocky Mountain NP 1997
+## 97      1                  6650              64192     ROMO Rocky Mountain NP 1998
+## 98      2                  7984              61194     ROMO Rocky Mountain NP 1998
+## 99      3                  7169              70334     ROMO Rocky Mountain NP 1998
+## 100     4                  5609              67735     ROMO Rocky Mountain NP 1998
+## 101     5                 13935             198448     ROMO Rocky Mountain NP 1998
+## 102     6                 18808             453744     ROMO Rocky Mountain NP 1998
+## 103     7                 26503             683467     ROMO Rocky Mountain NP 1998
+## 104     8                 35442             636460     ROMO Rocky Mountain NP 1998
+## 105     9                 20275             445728     ROMO Rocky Mountain NP 1998
+## 106    10                 13162             227638     ROMO Rocky Mountain NP 1998
+## 107    11                  7517              69927     ROMO Rocky Mountain NP 1998
+## 108    12                 11601              56555     ROMO Rocky Mountain NP 1998
+## 109     1                 12044              60871     ROMO Rocky Mountain NP 1999
+## 110     2                 11994              74798     ROMO Rocky Mountain NP 1999
+## 111     3                  9522              87163     ROMO Rocky Mountain NP 1999
+## 112     4                  2785              58644     ROMO Rocky Mountain NP 1999
+## 113     5                 12580             187697     ROMO Rocky Mountain NP 1999
+## 114     6                 13349             471035     ROMO Rocky Mountain NP 1999
+## 115     7                 37925             739167     ROMO Rocky Mountain NP 1999
+## 116     8                 22479             644694     ROMO Rocky Mountain NP 1999
+## 117     9                 24894             466394     ROMO Rocky Mountain NP 1999
+## 118    10                 10350             228197     ROMO Rocky Mountain NP 1999
+## 119    11                  8600              94367     ROMO Rocky Mountain NP 1999
+## 120    12                 13408              73296     ROMO Rocky Mountain NP 1999
+## 121     1                 11398              67728     ROMO Rocky Mountain NP 2000
+## 122     2                 11173              74328     ROMO Rocky Mountain NP 2000
+## 123     3                  9588              83498     ROMO Rocky Mountain NP 2000
+## 124     4                 14335              82564     ROMO Rocky Mountain NP 2000
+## 125     5                 12178             211790     ROMO Rocky Mountain NP 2000
+## 126     6                 24131             483925     ROMO Rocky Mountain NP 2000
+## 127     7                 39183             735598     ROMO Rocky Mountain NP 2000
+## 128     8                 27521             597407     ROMO Rocky Mountain NP 2000
+## 129     9                 11987             448191     ROMO Rocky Mountain NP 2000
+## 130    10                 11828             242240     ROMO Rocky Mountain NP 2000
+## 131    11                 10640              85145     ROMO Rocky Mountain NP 2000
+## 132    12                 10690              72978     ROMO Rocky Mountain NP 2000
+## 133     1                 15599              62319     ROMO Rocky Mountain NP 2001
+## 134     2                 13825              66820     ROMO Rocky Mountain NP 2001
+## 135     3                  8816              73736     ROMO Rocky Mountain NP 2001
+## 136     4                  7009              82007     ROMO Rocky Mountain NP 2001
+## 137     5                  3640             198797     ROMO Rocky Mountain NP 2001
+## 138     6                 21894             499970     ROMO Rocky Mountain NP 2001
+## 139     7                 40281             749500     ROMO Rocky Mountain NP 2001
+## 140     8                 27928             616789     ROMO Rocky Mountain NP 2001
+## 141     9                 12586             463160     ROMO Rocky Mountain NP 2001
+## 142    10                  6114             184616     ROMO Rocky Mountain NP 2001
+## 143    11                  9013              81020     ROMO Rocky Mountain NP 2001
+## 144    12                 11919              60951     ROMO Rocky Mountain NP 2001
+## 145     1                 14591              64696     ROMO Rocky Mountain NP 2002
+## 146     2                  9903              62365     ROMO Rocky Mountain NP 2002
+## 147     3                 11023              78997     ROMO Rocky Mountain NP 2002
+## 148     4                  6596              72485     ROMO Rocky Mountain NP 2002
+## 149     5                 14216             228491     ROMO Rocky Mountain NP 2002
+## 150     6                 16700             491045     ROMO Rocky Mountain NP 2002
+## 151     7                 17503             653677     ROMO Rocky Mountain NP 2002
+## 152     8                 18637             598693     ROMO Rocky Mountain NP 2002
+## 153     9                 13349             428493     ROMO Rocky Mountain NP 2002
+## 154    10                 10403             183445     ROMO Rocky Mountain NP 2002
+## 155    11                  9214              57455     ROMO Rocky Mountain NP 2002
+## 156    12                  7457              68633     ROMO Rocky Mountain NP 2002
+## 157     1                 31849              61472     ROMO Rocky Mountain NP 2003
+## 158     2                  6653              48224     ROMO Rocky Mountain NP 2003
+## 159     3                  7614              63999     ROMO Rocky Mountain NP 2003
+## 160     4                  3246              69226     ROMO Rocky Mountain NP 2003
+## 161     5                 18581             198771     ROMO Rocky Mountain NP 2003
+## 162     6                 17137             457861     ROMO Rocky Mountain NP 2003
+## 163     7                 17374             678086     ROMO Rocky Mountain NP 2003
+## 164     8                 24696             626473     ROMO Rocky Mountain NP 2003
+## 165     9                 17626             465941     ROMO Rocky Mountain NP 2003
+## 166    10                 15161             262699     ROMO Rocky Mountain NP 2003
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 207 rows ]</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="functions.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unit_visitation</span>(<span class="at">park=</span><span class="st">&quot;EVER&quot;</span>,<span class="at">startmonth=</span> <span class="st">&quot;01&quot;</span>,<span class="at">startyear=</span><span class="st">&quot;1990&quot;</span>, <span class="at">endmonth=</span> <span class="st">&quot;01&quot;</span>, <span class="at">endyear=</span> <span class="st">&quot;2021&quot;</span>)</span></code></pre></div>
+<pre><code>##     Month NonRecreationVisitors RecreationVisitors UnitCode      UnitName Year
+## 1       1                  5223             122121     EVER Everglades NP 1990
+## 2       2                  4518             131994     EVER Everglades NP 1990
+## 3       3                  5120             132341     EVER Everglades NP 1990
+## 4       4                  4225             111298     EVER Everglades NP 1990
+## 5       5                  3314              46134     EVER Everglades NP 1990
+## 6       6                  3100              46676     EVER Everglades NP 1990
+## 7       7                  3177              49461     EVER Everglades NP 1990
+## 8       8                  3153              54334     EVER Everglades NP 1990
+## 9       9                  2572              44768     EVER Everglades NP 1990
+## 10     10                  2607              48656     EVER Everglades NP 1990
+## 11     11                  3170              75518     EVER Everglades NP 1990
+## 12     12                  4005              94624     EVER Everglades NP 1990
+## 13      1                  6350             138817     EVER Everglades NP 1991
+## 14      2                  5255             149194     EVER Everglades NP 1991
+## 15      3                  5762             150641     EVER Everglades NP 1991
+## 16      4                  5067             110235     EVER Everglades NP 1991
+## 17      5                  3762              94660     EVER Everglades NP 1991
+## 18      6                  4143              68937     EVER Everglades NP 1991
+## 19      7                  4121              61878     EVER Everglades NP 1991
+## 20      8                  3860              71602     EVER Everglades NP 1991
+## 21      9                  3599              81298     EVER Everglades NP 1991
+## 22     10                  4058              86312     EVER Everglades NP 1991
+## 23     11                  4586             126458     EVER Everglades NP 1991
+## 24     12                  5066             151982     EVER Everglades NP 1991
+## 25      1                  6623             142197     EVER Everglades NP 1992
+## 26      2                  5745             163917     EVER Everglades NP 1992
+## 27      3                  6518             158688     EVER Everglades NP 1992
+## 28      4                  5067             126842     EVER Everglades NP 1992
+## 29      5                  4095             100595     EVER Everglades NP 1992
+## 30      6                  3896              59923     EVER Everglades NP 1992
+## 31      7                  4011              70128     EVER Everglades NP 1992
+## 32      8                  2615              59786     EVER Everglades NP 1992
+## 33      9                     0               7610     EVER Everglades NP 1992
+## 34     10                     0              23820     EVER Everglades NP 1992
+## 35     11                     0              30644     EVER Everglades NP 1992
+## 36     12                   101              81536     EVER Everglades NP 1992
+## 37      1                  7386             106855     EVER Everglades NP 1993
+## 38      2                  7199             119887     EVER Everglades NP 1993
+## 39      3                  8078             121353     EVER Everglades NP 1993
+## 40      4                  7478              96384     EVER Everglades NP 1993
+## 41      5                  7178              76531     EVER Everglades NP 1993
+## 42      6                  6816              62341     EVER Everglades NP 1993
+## 43      7                  6752              66214     EVER Everglades NP 1993
+## 44      8                  6317              61743     EVER Everglades NP 1993
+## 45      9                  6773              51114     EVER Everglades NP 1993
+## 46     10                  7322              58058     EVER Everglades NP 1993
+## 47     11                  7899              67870     EVER Everglades NP 1993
+## 48     12                  8739              85356     EVER Everglades NP 1993
+## 49      1                  8879             103824     EVER Everglades NP 1994
+## 50      2                  8846             114850     EVER Everglades NP 1994
+## 51      3                 10365             121521     EVER Everglades NP 1994
+## 52      4                  8670              95785     EVER Everglades NP 1994
+## 53      5                  7622              65038     EVER Everglades NP 1994
+## 54      6                  7403              44801     EVER Everglades NP 1994
+## 55      7                  6521              51623     EVER Everglades NP 1994
+## 56      8                  7712              47314     EVER Everglades NP 1994
+## 57      9                  7107              47692     EVER Everglades NP 1994
+## 58     10                  7203              58634     EVER Everglades NP 1994
+## 59     11                  7250              64073     EVER Everglades NP 1994
+## 60     12                  7911              71300     EVER Everglades NP 1994
+## 61      1                  8696              93967     EVER Everglades NP 1995
+## 62      2                  7994             110040     EVER Everglades NP 1995
+## 63      3                  8585             110731     EVER Everglades NP 1995
+## 64      4                  8285              91298     EVER Everglades NP 1995
+## 65      5                  7917              67638     EVER Everglades NP 1995
+## 66      6                  7716              46409     EVER Everglades NP 1995
+## 67      7                  6429              52860     EVER Everglades NP 1995
+## 68      8                  6687              50107     EVER Everglades NP 1995
+## 69      9                  6666              50551     EVER Everglades NP 1995
+## 70     10                  7665              51712     EVER Everglades NP 1995
+## 71     11                  7400              57410     EVER Everglades NP 1995
+## 72     12                  4857              37743     EVER Everglades NP 1995
+## 73      1                  8039              65868     EVER Everglades NP 1996
+## 74      2                  8927             124372     EVER Everglades NP 1996
+## 75      3                  9716             110571     EVER Everglades NP 1996
+## 76      4                  8720              97373     EVER Everglades NP 1996
+## 77      5                  8943              71766     EVER Everglades NP 1996
+## 78      6                  7661              46886     EVER Everglades NP 1996
+## 79      7                  8262              51640     EVER Everglades NP 1996
+## 80      8                  7530              55346     EVER Everglades NP 1996
+## 81      9                  6584              51386     EVER Everglades NP 1996
+## 82     10                  7493              52018     EVER Everglades NP 1996
+## 83     11                  7065              73584     EVER Everglades NP 1996
+## 84     12                  5718              89357     EVER Everglades NP 1996
+## 85      1                  7490             102559     EVER Everglades NP 1997
+## 86      2                  6375             128164     EVER Everglades NP 1997
+## 87      3                  6690             132529     EVER Everglades NP 1997
+## 88      4                  5478              88382     EVER Everglades NP 1997
+## 89      5                  4893              72557     EVER Everglades NP 1997
+## 90      6                  4670              49464     EVER Everglades NP 1997
+## 91      7                  4173              55966     EVER Everglades NP 1997
+## 92      8                  3581              59598     EVER Everglades NP 1997
+## 93      9                  4067              45536     EVER Everglades NP 1997
+## 94     10                  4719              79997     EVER Everglades NP 1997
+## 95     11                  5025              85065     EVER Everglades NP 1997
+## 96     12                  5259              89715     EVER Everglades NP 1997
+## 97      1                  8039             118179     EVER Everglades NP 1998
+## 98      2                  5753             128335     EVER Everglades NP 1998
+## 99      3                  6168             130692     EVER Everglades NP 1998
+## 100     4                  5289             105733     EVER Everglades NP 1998
+## 101     5                  5022              94166     EVER Everglades NP 1998
+## 102     6                  4523              66404     EVER Everglades NP 1998
+## 103     7                  4298              76686     EVER Everglades NP 1998
+## 104     8                  4202              82053     EVER Everglades NP 1998
+## 105     9                  2922              56280     EVER Everglades NP 1998
+## 106    10                  3785              72328     EVER Everglades NP 1998
+## 107    11                  4449              92830     EVER Everglades NP 1998
+## 108    12                  4812              94529     EVER Everglades NP 1998
+## 109     1                  5801             118341     EVER Everglades NP 1999
+## 110     2                  5750             139935     EVER Everglades NP 1999
+## 111     3                  6240             145592     EVER Everglades NP 1999
+## 112     4                  5627             118254     EVER Everglades NP 1999
+## 113     5                  5582              82388     EVER Everglades NP 1999
+## 114     6                  6807              64672     EVER Everglades NP 1999
+## 115     7                  5999              68994     EVER Everglades NP 1999
+## 116     8                  5664              68676     EVER Everglades NP 1999
+## 117     9                  4674              58989     EVER Everglades NP 1999
+## 118    10                  4736              57213     EVER Everglades NP 1999
+## 119    11                  5163              73757     EVER Everglades NP 1999
+## 120    12                  5418              77171     EVER Everglades NP 1999
+## 121     1                  6138             109488     EVER Everglades NP 2000
+## 122     2                  6368             131302     EVER Everglades NP 2000
+## 123     3                  6225             127298     EVER Everglades NP 2000
+## 124     4                  5523             100648     EVER Everglades NP 2000
+## 125     5                  5789              81748     EVER Everglades NP 2000
+## 126     6                  5040              44130     EVER Everglades NP 2000
+## 127     7                  5085              41367     EVER Everglades NP 2000
+## 128     8                  5459              56499     EVER Everglades NP 2000
+## 129     9                  5256              58225     EVER Everglades NP 2000
+## 130    10                  5523              73489     EVER Everglades NP 2000
+## 131    11                  4290              83271     EVER Everglades NP 2000
+## 132    12                  4542              87925     EVER Everglades NP 2000
+## 133     1                  6188             130610     EVER Everglades NP 2001
+## 134     2                  5058             159927     EVER Everglades NP 2001
+## 135     3                  5828             142544     EVER Everglades NP 2001
+## 136     4                  4935             105186     EVER Everglades NP 2001
+## 137     5                  6057              78059     EVER Everglades NP 2001
+## 138     6                  5270              63953     EVER Everglades NP 2001
+## 139     7                  4062              61905     EVER Everglades NP 2001
+## 140     8                  4310              52413     EVER Everglades NP 2001
+## 141     9                  3782              40968     EVER Everglades NP 2001
+## 142    10                  4206              54878     EVER Everglades NP 2001
+## 143    11                  4494              70801     EVER Everglades NP 2001
+## 144    12                  4349              88607     EVER Everglades NP 2001
+## 145     1                  6188             116699     EVER Everglades NP 2002
+## 146     2                  5361             123767     EVER Everglades NP 2002
+## 147     3                 14637             138066     EVER Everglades NP 2002
+## 148     4                  5640              90924     EVER Everglades NP 2002
+## 149     5                  4635              59925     EVER Everglades NP 2002
+## 150     6                  4497              46614     EVER Everglades NP 2002
+## 151     7                  4122              52050     EVER Everglades NP 2002
+## 152     8                  4433              51891     EVER Everglades NP 2002
+## 153     9                  4131              46264     EVER Everglades NP 2002
+## 154    10                  4626              82933     EVER Everglades NP 2002
+## 155    11                  4883              76566     EVER Everglades NP 2002
+## 156    12                  5820              83210     EVER Everglades NP 2002
+## 157     1                  6998             116320     EVER Everglades NP 2003
+## 158     2                  6260             131014     EVER Everglades NP 2003
+## 159     3                  6905             135722     EVER Everglades NP 2003
+## 160     4                  6171              94008     EVER Everglades NP 2003
+## 161     5                  5058              68448     EVER Everglades NP 2003
+## 162     6                  3578              58174     EVER Everglades NP 2003
+## 163     7                  3362              64537     EVER Everglades NP 2003
+## 164     8                  3188              65496     EVER Everglades NP 2003
+## 165     9                  3096              55460     EVER Everglades NP 2003
+## 166    10                  4289              70974     EVER Everglades NP 2003
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 207 rows ]</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="functions.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unit_visitation</span>(<span class="at">park=</span><span class="st">&quot;THRO&quot;</span>,<span class="at">startmonth=</span> <span class="st">&quot;01&quot;</span>,<span class="at">startyear=</span><span class="st">&quot;1990&quot;</span>, <span class="at">endmonth=</span> <span class="st">&quot;01&quot;</span>, <span class="at">endyear=</span> <span class="st">&quot;2021&quot;</span>)</span></code></pre></div>
+<pre><code>##     Month NonRecreationVisitors RecreationVisitors UnitCode              UnitName
+## 1       1                   434               1044     THRO Theodore Roosevelt NP
+## 2       2                   434               1339     THRO Theodore Roosevelt NP
+## 3       3                   434               3636     THRO Theodore Roosevelt NP
+## 4       4                   623              16226     THRO Theodore Roosevelt NP
+## 5       5                   623              39255     THRO Theodore Roosevelt NP
+## 6       6                   623              88320     THRO Theodore Roosevelt NP
+## 7       7                   623             131586     THRO Theodore Roosevelt NP
+## 8       8                   623             118057     THRO Theodore Roosevelt NP
+## 9       9                   623              46139     THRO Theodore Roosevelt NP
+## 10     10                   623               9207     THRO Theodore Roosevelt NP
+## 11     11                   434               4326     THRO Theodore Roosevelt NP
+## 12     12                   434               1583     THRO Theodore Roosevelt NP
+## 13      1                   434               1387     THRO Theodore Roosevelt NP
+## 14      2                   434               1462     THRO Theodore Roosevelt NP
+## 15      3                   434               4332     THRO Theodore Roosevelt NP
+## 16      4                   623              13501     THRO Theodore Roosevelt NP
+## 17      5                   623              34713     THRO Theodore Roosevelt NP
+## 18      6                   623              83363     THRO Theodore Roosevelt NP
+## 19      7                   623             127724     THRO Theodore Roosevelt NP
+## 20      8                   623             129336     THRO Theodore Roosevelt NP
+## 21      9                   623              45886     THRO Theodore Roosevelt NP
+## 22     10                   623              20626     THRO Theodore Roosevelt NP
+## 23     11                   434               5220     THRO Theodore Roosevelt NP
+## 24     12                   434               1376     THRO Theodore Roosevelt NP
+## 25      1                   417                909     THRO Theodore Roosevelt NP
+## 26      2                   417               1026     THRO Theodore Roosevelt NP
+## 27      3                   472               3663     THRO Theodore Roosevelt NP
+## 28      4                   622              15052     THRO Theodore Roosevelt NP
+## 29      5                   623              35418     THRO Theodore Roosevelt NP
+## 30      6                   623              82069     THRO Theodore Roosevelt NP
+## 31      7                   622             134524     THRO Theodore Roosevelt NP
+## 32      8                   621             130518     THRO Theodore Roosevelt NP
+## 33      9                   624              47515     THRO Theodore Roosevelt NP
+## 34     10                   482              20176     THRO Theodore Roosevelt NP
+## 35     11                   472               4435     THRO Theodore Roosevelt NP
+## 36     12                   417                632     THRO Theodore Roosevelt NP
+## 37      1                   417                748     THRO Theodore Roosevelt NP
+## 38      2                   417                814     THRO Theodore Roosevelt NP
+## 39      3                   472               2212     THRO Theodore Roosevelt NP
+## 40      4                   622              14042     THRO Theodore Roosevelt NP
+## 41      5                   623              37693     THRO Theodore Roosevelt NP
+## 42      6                   623              80340     THRO Theodore Roosevelt NP
+## 43      7                   622             125177     THRO Theodore Roosevelt NP
+## 44      8                   621             136519     THRO Theodore Roosevelt NP
+## 45      9                   624              49363     THRO Theodore Roosevelt NP
+## 46     10                   482              22456     THRO Theodore Roosevelt NP
+## 47     11                   472               4789     THRO Theodore Roosevelt NP
+## 48     12                   417               1007     THRO Theodore Roosevelt NP
+## 49      1                   417                894     THRO Theodore Roosevelt NP
+## 50      2                   417                933     THRO Theodore Roosevelt NP
+## 51      3                   472               2884     THRO Theodore Roosevelt NP
+## 52      4                   622              16714     THRO Theodore Roosevelt NP
+## 53      5                   623              41432     THRO Theodore Roosevelt NP
+## 54      6                   623              85653     THRO Theodore Roosevelt NP
+## 55      7                   622             141375     THRO Theodore Roosevelt NP
+## 56      8                   621             130386     THRO Theodore Roosevelt NP
+## 57      9                   624              56071     THRO Theodore Roosevelt NP
+## 58     10                   482              22176     THRO Theodore Roosevelt NP
+## 59     11                   472               5667     THRO Theodore Roosevelt NP
+## 60     12                   417               1164     THRO Theodore Roosevelt NP
+## 61      1                   417               1058     THRO Theodore Roosevelt NP
+## 62      2                   417               1688     THRO Theodore Roosevelt NP
+## 63      3                   472               2020     THRO Theodore Roosevelt NP
+## 64      4                   622              12437     THRO Theodore Roosevelt NP
+## 65      5                   623              37140     THRO Theodore Roosevelt NP
+## 66      6                   623              62012     THRO Theodore Roosevelt NP
+## 67      7                   622             126108     THRO Theodore Roosevelt NP
+## 68      8                   621             125332     THRO Theodore Roosevelt NP
+## 69      9                   624              59467     THRO Theodore Roosevelt NP
+## 70     10                   482              25065     THRO Theodore Roosevelt NP
+## 71     11                   472               7819     THRO Theodore Roosevelt NP
+## 72     12                   417                553     THRO Theodore Roosevelt NP
+## 73      1                   417                712     THRO Theodore Roosevelt NP
+## 74      2                   417               1752     THRO Theodore Roosevelt NP
+## 75      3                   472               2822     THRO Theodore Roosevelt NP
+## 76      4                   622              16940     THRO Theodore Roosevelt NP
+## 77      5                   623              43424     THRO Theodore Roosevelt NP
+## 78      6                   623              58352     THRO Theodore Roosevelt NP
+## 79      7                   622              99750     THRO Theodore Roosevelt NP
+## 80      8                   621             122566     THRO Theodore Roosevelt NP
+## 81      9                   624              53108     THRO Theodore Roosevelt NP
+## 82     10                   482              27333     THRO Theodore Roosevelt NP
+## 83     11                   472               8528     THRO Theodore Roosevelt NP
+## 84     12                   417                794     THRO Theodore Roosevelt NP
+## 85      1                   417                814     THRO Theodore Roosevelt NP
+## 86      2                   417               1676     THRO Theodore Roosevelt NP
+## 87      3                   472               2519     THRO Theodore Roosevelt NP
+## 88      4                   622              10127     THRO Theodore Roosevelt NP
+## 89      5                   623              29261     THRO Theodore Roosevelt NP
+## 90      6                   623              61553     THRO Theodore Roosevelt NP
+## 91      7                   622              93687     THRO Theodore Roosevelt NP
+## 92      8                   621             108501     THRO Theodore Roosevelt NP
+## 93      9                   624              52435     THRO Theodore Roosevelt NP
+## 94     10                   482              24610     THRO Theodore Roosevelt NP
+## 95     11                   472               5512     THRO Theodore Roosevelt NP
+## 96     12                   417               2570     THRO Theodore Roosevelt NP
+## 97      1                   417               3211     THRO Theodore Roosevelt NP
+## 98      2                   417               3222     THRO Theodore Roosevelt NP
+## 99      3                   472               2225     THRO Theodore Roosevelt NP
+## 100     4                   622              17438     THRO Theodore Roosevelt NP
+## 101     5                   623              40643     THRO Theodore Roosevelt NP
+## 102     6                   623              76842     THRO Theodore Roosevelt NP
+## 103     7                   622             106388     THRO Theodore Roosevelt NP
+## 104     8                   621             111675     THRO Theodore Roosevelt NP
+## 105     9                   624              54891     THRO Theodore Roosevelt NP
+## 106    10                   482              23752     THRO Theodore Roosevelt NP
+## 107    11                   472               6885     THRO Theodore Roosevelt NP
+## 108    12                   417               1114     THRO Theodore Roosevelt NP
+## 109     1                   472               1167     THRO Theodore Roosevelt NP
+## 110     2                   472               1464     THRO Theodore Roosevelt NP
+## 111     3                   472               2921     THRO Theodore Roosevelt NP
+## 112     4                   622              20194     THRO Theodore Roosevelt NP
+## 113     5                   623              30590     THRO Theodore Roosevelt NP
+## 114     6                   623              71375     THRO Theodore Roosevelt NP
+## 115     7                   622             102566     THRO Theodore Roosevelt NP
+## 116     8                   621             110667     THRO Theodore Roosevelt NP
+## 117     9                   624              51527     THRO Theodore Roosevelt NP
+## 118    10                   483              27695     THRO Theodore Roosevelt NP
+## 119    11                   472               9617     THRO Theodore Roosevelt NP
+## 120    12                   472               1528     THRO Theodore Roosevelt NP
+## 121     1                   472               1039     THRO Theodore Roosevelt NP
+## 122     2                   472               1037     THRO Theodore Roosevelt NP
+## 123     3                   472               4073     THRO Theodore Roosevelt NP
+## 124     4                   622              16264     THRO Theodore Roosevelt NP
+## 125     5                   623              41394     THRO Theodore Roosevelt NP
+## 126     6                   623              64396     THRO Theodore Roosevelt NP
+## 127     7                   622             116569     THRO Theodore Roosevelt NP
+## 128     8                   621             101706     THRO Theodore Roosevelt NP
+## 129     9                   624              55362     THRO Theodore Roosevelt NP
+## 130    10                   483              22097     THRO Theodore Roosevelt NP
+## 131    11                   472               7138     THRO Theodore Roosevelt NP
+## 132    12                   472                738     THRO Theodore Roosevelt NP
+## 133     1                   472                625     THRO Theodore Roosevelt NP
+## 134     2                   472                583     THRO Theodore Roosevelt NP
+## 135     3                   472               1706     THRO Theodore Roosevelt NP
+## 136     4                   622              15367     THRO Theodore Roosevelt NP
+## 137     5                   623              34347     THRO Theodore Roosevelt NP
+## 138     6                   623              70200     THRO Theodore Roosevelt NP
+## 139     7                   622             117441     THRO Theodore Roosevelt NP
+## 140     8                   621             114881     THRO Theodore Roosevelt NP
+## 141     9                   624              56866     THRO Theodore Roosevelt NP
+## 142    10                   483              26244     THRO Theodore Roosevelt NP
+## 143    11                   472               7556     THRO Theodore Roosevelt NP
+## 144    12                   472                793     THRO Theodore Roosevelt NP
+## 145     1                   472                672     THRO Theodore Roosevelt NP
+## 146     2                   472                646     THRO Theodore Roosevelt NP
+## 147     3                   472               1745     THRO Theodore Roosevelt NP
+## 148     4                   622              15680     THRO Theodore Roosevelt NP
+## 149     5                   623              35473     THRO Theodore Roosevelt NP
+## 150     6                   623              76734     THRO Theodore Roosevelt NP
+## 151     7                   622             120464     THRO Theodore Roosevelt NP
+## 152     8                   621             119915     THRO Theodore Roosevelt NP
+## 153     9                   624              65289     THRO Theodore Roosevelt NP
+## 154    10                   483              25478     THRO Theodore Roosevelt NP
+## 155    11                   472               8484     THRO Theodore Roosevelt NP
+## 156    12                   472                971     THRO Theodore Roosevelt NP
+## 157     1                   472               1334     THRO Theodore Roosevelt NP
+## 158     2                   472               1682     THRO Theodore Roosevelt NP
+## 159     3                   472               2425     THRO Theodore Roosevelt NP
+## 160     4                   622              18106     THRO Theodore Roosevelt NP
+## 161     5                   623              37445     THRO Theodore Roosevelt NP
+## 162     6                   623              78469     THRO Theodore Roosevelt NP
+## 163     7                   622             114219     THRO Theodore Roosevelt NP
+## 164     8                   621             116140     THRO Theodore Roosevelt NP
+## 165     9                   624              72031     THRO Theodore Roosevelt NP
+## 166    10                   483              36908     THRO Theodore Roosevelt NP
+##     Year
+## 1   1990
+## 2   1990
+## 3   1990
+## 4   1990
+## 5   1990
+## 6   1990
+## 7   1990
+## 8   1990
+## 9   1990
+## 10  1990
+## 11  1990
+## 12  1990
+## 13  1991
+## 14  1991
+## 15  1991
+## 16  1991
+## 17  1991
+## 18  1991
+## 19  1991
+## 20  1991
+## 21  1991
+## 22  1991
+## 23  1991
+## 24  1991
+## 25  1992
+## 26  1992
+## 27  1992
+## 28  1992
+## 29  1992
+## 30  1992
+## 31  1992
+## 32  1992
+## 33  1992
+## 34  1992
+## 35  1992
+## 36  1992
+## 37  1993
+## 38  1993
+## 39  1993
+## 40  1993
+## 41  1993
+## 42  1993
+## 43  1993
+## 44  1993
+## 45  1993
+## 46  1993
+## 47  1993
+## 48  1993
+## 49  1994
+## 50  1994
+## 51  1994
+## 52  1994
+## 53  1994
+## 54  1994
+## 55  1994
+## 56  1994
+## 57  1994
+## 58  1994
+## 59  1994
+## 60  1994
+## 61  1995
+## 62  1995
+## 63  1995
+## 64  1995
+## 65  1995
+## 66  1995
+## 67  1995
+## 68  1995
+## 69  1995
+## 70  1995
+## 71  1995
+## 72  1995
+## 73  1996
+## 74  1996
+## 75  1996
+## 76  1996
+## 77  1996
+## 78  1996
+## 79  1996
+## 80  1996
+## 81  1996
+## 82  1996
+## 83  1996
+## 84  1996
+## 85  1997
+## 86  1997
+## 87  1997
+## 88  1997
+## 89  1997
+## 90  1997
+## 91  1997
+## 92  1997
+## 93  1997
+## 94  1997
+## 95  1997
+## 96  1997
+## 97  1998
+## 98  1998
+## 99  1998
+## 100 1998
+## 101 1998
+## 102 1998
+## 103 1998
+## 104 1998
+## 105 1998
+## 106 1998
+## 107 1998
+## 108 1998
+## 109 1999
+## 110 1999
+## 111 1999
+## 112 1999
+## 113 1999
+## 114 1999
+## 115 1999
+## 116 1999
+## 117 1999
+## 118 1999
+## 119 1999
+## 120 1999
+## 121 2000
+## 122 2000
+## 123 2000
+## 124 2000
+## 125 2000
+## 126 2000
+## 127 2000
+## 128 2000
+## 129 2000
+## 130 2000
+## 131 2000
+## 132 2000
+## 133 2001
+## 134 2001
+## 135 2001
+## 136 2001
+## 137 2001
+## 138 2001
+## 139 2001
+## 140 2001
+## 141 2001
+## 142 2001
+## 143 2001
+## 144 2001
+## 145 2002
+## 146 2002
+## 147 2002
+## 148 2002
+## 149 2002
+## 150 2002
+## 151 2002
+## 152 2002
+## 153 2002
+## 154 2002
+## 155 2002
+## 156 2002
+## 157 2003
+## 158 2003
+## 159 2003
+## 160 2003
+## 161 2003
+## 162 2003
+## 163 2003
+## 164 2003
+## 165 2003
+## 166 2003
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 207 rows ]</code></pre>
+</div>
+</div>
+<div id="function-defaults" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Function Defaults<a href="functions.html#function-defaults" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Look at the code that you just wrote; writing out all of those unchanging date arguments still feels repetitive, right? When developing functions, there is an option for setting default values for arguments so that you don’t necessarily have to write all of them out every time you run it in the future. But, the option still exists within the function to make changes when necessary. For example, let’s tweak our <code>parkwide_visitaion()</code> function to have the default year be 2021:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="functions.html#cb24-1" aria-hidden="true" tabindex="-1"></a>parkwide_visitation <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">year =</span> <span class="st">&quot;2021&quot;</span>) {</span>
+<span id="cb24-2"><a href="functions.html#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="functions.html#cb24-3" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">GET</span>(<span class="at">url =</span> <span class="fu">paste0</span>(<span class="st">&quot;https://irmaservices.nps.gov/v3/rest/stats/total/&quot;</span>, year))</span>
+<span id="cb24-4"><a href="functions.html#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="functions.html#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># convert content to text</span></span>
+<span id="cb24-6"><a href="functions.html#cb24-6" aria-hidden="true" tabindex="-1"></a>extracted_data <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">content</span>(raw_data, <span class="at">as =</span> <span class="st">&quot;text&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>) </span>
+<span id="cb24-7"><a href="functions.html#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="functions.html#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># parse text from JSON to data frame</span></span>
+<span id="cb24-9"><a href="functions.html#cb24-9" aria-hidden="true" tabindex="-1"></a>final_data <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(extracted_data)</span>
+<span id="cb24-10"><a href="functions.html#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="functions.html#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(final_data)</span>
+<span id="cb24-12"><a href="functions.html#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="functions.html#cb24-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-14"><a href="functions.html#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-15"><a href="functions.html#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="fu">parkwide_visitation</span>()</span></code></pre></div>
+<pre><code>##    Month NonRecreationVisitors RecreationVisitors UnitCode UnitName Year
+## 1      1              11632614           11978413       NA       NA 2021
+## 2      2              11082899           11692967       NA       NA 2021
+## 3      3              12981524           18370611       NA       NA 2021
+## 4      4              12857567           22155245       NA       NA 2021
+## 5      5              13250575           27963739       NA       NA 2021
+## 6      6              13789961           36122392       NA       NA 2021
+## 7      7              14734920           41329530       NA       NA 2021
+## 8      8              14280304           35380986       NA       NA 2021
+## 9      9              13382939           30204635       NA       NA 2021
+## 10    10              13882165           26961779       NA       NA 2021
+## 11    11              13192146           18903397       NA       NA 2021
+## 12    12              13007065           16051712       NA       NA 2021</code></pre>
+<p>Because the default year is 2021, you don’t have to write it out explicitly in the function (so long as that’s the year you’re interested in). But, you still have the option of changing the year to something else:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="functions.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parkwide_visitation</span>(<span class="at">year =</span> <span class="st">&quot;1992&quot;</span>)</span></code></pre></div>
+<pre><code>##    Month NonRecreationVisitors RecreationVisitors UnitCode UnitName Year
+## 1      1               6209285           10940618       NA       NA 1992
+## 2      2               6010027           11931340       NA       NA 1992
+## 3      3               6756902           15369139       NA       NA 1992
+## 4      4               7255782           21458739       NA       NA 1992
+## 5      5               7690763           26648530       NA       NA 1992
+## 6      6               7593227           33284625       NA       NA 1992
+## 7      7               8438755           41099305       NA       NA 1992
+## 8      8               8056823           38625804       NA       NA 1992
+## 9      9               7329755           26438266       NA       NA 1992
+## 10    10               7105574           23616057       NA       NA 1992
+## 11    11               6507805           14338165       NA       NA 1992
+## 12    12               6702698           10943961       NA       NA 1992</code></pre>
+<div id="exercise-5" class="section level3 hasAnchor" number="3.2.1" style="color: maroon">
+<h3><span class="header-section-number">3.2.1</span> Exercise #5<a href="functions.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Default our <code>unit_visitation()</code> function’s arguments related to the starting and ending months to January and December, respectively. This way, we are automatically pulling in data for entire years. Rerun the function for ROMO, EVER, and THRO for the 1980-2021 time period to make sure it works properly.</strong></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="functions.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unit_visitation</span>(<span class="at">park=</span><span class="st">&quot;ROMO&quot;</span>,<span class="at">startmonth=</span> <span class="st">&quot;01&quot;</span>,<span class="at">startyear=</span><span class="st">&quot;1990&quot;</span>, <span class="at">endmonth=</span> <span class="st">&quot;12&quot;</span>, <span class="at">endyear=</span> <span class="st">&quot;2021&quot;</span>)</span></code></pre></div>
+<pre><code>##     Month NonRecreationVisitors RecreationVisitors UnitCode          UnitName Year
+## 1       1                 10956              53565     ROMO Rocky Mountain NP 1990
+## 2       2                  9343              49896     ROMO Rocky Mountain NP 1990
+## 3       3                  7247              65280     ROMO Rocky Mountain NP 1990
+## 4       4                  4681              60274     ROMO Rocky Mountain NP 1990
+## 5       5                 11465             108881     ROMO Rocky Mountain NP 1990
+## 6       6                 17173             435279     ROMO Rocky Mountain NP 1990
+## 7       7                 28031             560806     ROMO Rocky Mountain NP 1990
+## 8       8                 30676             646018     ROMO Rocky Mountain NP 1990
+## 9       9                 13162             392873     ROMO Rocky Mountain NP 1990
+## 10     10                  9608             164130     ROMO Rocky Mountain NP 1990
+## 11     11                  5749              73064     ROMO Rocky Mountain NP 1990
+## 12     12                  5845              37257     ROMO Rocky Mountain NP 1990
+## 13      1                  8071              50910     ROMO Rocky Mountain NP 1991
+## 14      2                  6467              57547     ROMO Rocky Mountain NP 1991
+## 15      3                  8492              56241     ROMO Rocky Mountain NP 1991
+## 16      4                  6231              67986     ROMO Rocky Mountain NP 1991
+## 17      5                 13124             118351     ROMO Rocky Mountain NP 1991
+## 18      6                 18645             434810     ROMO Rocky Mountain NP 1991
+## 19      7                 28663             614118     ROMO Rocky Mountain NP 1991
+## 20      8                 25541             642734     ROMO Rocky Mountain NP 1991
+## 21      9                 19042             385524     ROMO Rocky Mountain NP 1991
+## 22     10                  9185             237608     ROMO Rocky Mountain NP 1991
+## 23     11                  2815              43136     ROMO Rocky Mountain NP 1991
+## 24     12                  5754              42816     ROMO Rocky Mountain NP 1991
+## 25      1                  9398              60038     ROMO Rocky Mountain NP 1992
+## 26      2                  9674              48476     ROMO Rocky Mountain NP 1992
+## 27      3                  6444              58478     ROMO Rocky Mountain NP 1992
+## 28      4                  4797              80217     ROMO Rocky Mountain NP 1992
+## 29      5                 11308             160788     ROMO Rocky Mountain NP 1992
+## 30      6                 15198             408630     ROMO Rocky Mountain NP 1992
+## 31      7                 28690             606764     ROMO Rocky Mountain NP 1992
+## 32      8                 24688             623634     ROMO Rocky Mountain NP 1992
+## 33      9                 20790             440843     ROMO Rocky Mountain NP 1992
+## 34     10                 12764             218570     ROMO Rocky Mountain NP 1992
+## 35     11                  4346              47490     ROMO Rocky Mountain NP 1992
+## 36     12                  5778              34940     ROMO Rocky Mountain NP 1992
+## 37      1                  9015              53780     ROMO Rocky Mountain NP 1993
+## 38      2                  8490              39962     ROMO Rocky Mountain NP 1993
+## 39      3                  7375              52511     ROMO Rocky Mountain NP 1993
+## 40      4                  5256              65790     ROMO Rocky Mountain NP 1993
+## 41      5                  7498             120708     ROMO Rocky Mountain NP 1993
+## 42      6                 20483             424670     ROMO Rocky Mountain NP 1993
+## 43      7                 31510             623451     ROMO Rocky Mountain NP 1993
+## 44      8                 36845             654327     ROMO Rocky Mountain NP 1993
+## 45      9                 22219             423570     ROMO Rocky Mountain NP 1993
+## 46     10                 11741             230972     ROMO Rocky Mountain NP 1993
+## 47     11                  4239              48776     ROMO Rocky Mountain NP 1993
+## 48     12                  5854              41825     ROMO Rocky Mountain NP 1993
+## 49      1                  9492              66336     ROMO Rocky Mountain NP 1994
+## 50      2                  8488              46474     ROMO Rocky Mountain NP 1994
+## 51      3                  7359              64501     ROMO Rocky Mountain NP 1994
+## 52      4                  5214              73383     ROMO Rocky Mountain NP 1994
+## 53      5                 12081             140442     ROMO Rocky Mountain NP 1994
+## 54      6                 16073             454741     ROMO Rocky Mountain NP 1994
+## 55      7                 26679             637208     ROMO Rocky Mountain NP 1994
+## 56      8                 38247             691826     ROMO Rocky Mountain NP 1994
+## 57      9                 35752             486600     ROMO Rocky Mountain NP 1994
+## 58     10                 12793             200637     ROMO Rocky Mountain NP 1994
+## 59     11                  6187              65256     ROMO Rocky Mountain NP 1994
+## 60     12                  6880              41046     ROMO Rocky Mountain NP 1994
+## 61      1                  6110              72264     ROMO Rocky Mountain NP 1995
+## 62      2                  6110              55526     ROMO Rocky Mountain NP 1995
+## 63      3                  4300              62216     ROMO Rocky Mountain NP 1995
+## 64      4                  3040              63517     ROMO Rocky Mountain NP 1995
+## 65      5                  6820             107774     ROMO Rocky Mountain NP 1995
+## 66      6                  9309             401034     ROMO Rocky Mountain NP 1995
+## 67      7                 15637             643304     ROMO Rocky Mountain NP 1995
+## 68      8                 35836             718453     ROMO Rocky Mountain NP 1995
+## 69      9                 18281             404990     ROMO Rocky Mountain NP 1995
+## 70     10                 11162             237056     ROMO Rocky Mountain NP 1995
+## 71     11                  7043              69520     ROMO Rocky Mountain NP 1995
+## 72     12                  6630              42515     ROMO Rocky Mountain NP 1995
+## 73      1                  9408              50604     ROMO Rocky Mountain NP 1996
+## 74      2                  8293              56462     ROMO Rocky Mountain NP 1996
+## 75      3                  7368              69517     ROMO Rocky Mountain NP 1996
+## 76      4                  7317              73462     ROMO Rocky Mountain NP 1996
+## 77      5                 13786             177831     ROMO Rocky Mountain NP 1996
+## 78      6                 24138             442730     ROMO Rocky Mountain NP 1996
+## 79      7                 34807             669291     ROMO Rocky Mountain NP 1996
+## 80      8                 36317             658613     ROMO Rocky Mountain NP 1996
+## 81      9                 26050             405585     ROMO Rocky Mountain NP 1996
+## 82     10                 12166             194353     ROMO Rocky Mountain NP 1996
+## 83     11                  5904              61799     ROMO Rocky Mountain NP 1996
+## 84     12                  6476              63508     ROMO Rocky Mountain NP 1996
+## 85      1                  9041              60995     ROMO Rocky Mountain NP 1997
+## 86      2                  5912              55496     ROMO Rocky Mountain NP 1997
+## 87      3                 10246              82957     ROMO Rocky Mountain NP 1997
+## 88      4                  4570              54619     ROMO Rocky Mountain NP 1997
+## 89      5                 10020             182301     ROMO Rocky Mountain NP 1997
+## 90      6                 16702             477849     ROMO Rocky Mountain NP 1997
+## 91      7                 27457             672256     ROMO Rocky Mountain NP 1997
+## 92      8                 32563             635015     ROMO Rocky Mountain NP 1997
+## 93      9                 21495             408657     ROMO Rocky Mountain NP 1997
+## 94     10                 10298             211588     ROMO Rocky Mountain NP 1997
+## 95     11                  9683              65166     ROMO Rocky Mountain NP 1997
+## 96     12                 10182              58455     ROMO Rocky Mountain NP 1997
+## 97      1                  6650              64192     ROMO Rocky Mountain NP 1998
+## 98      2                  7984              61194     ROMO Rocky Mountain NP 1998
+## 99      3                  7169              70334     ROMO Rocky Mountain NP 1998
+## 100     4                  5609              67735     ROMO Rocky Mountain NP 1998
+## 101     5                 13935             198448     ROMO Rocky Mountain NP 1998
+## 102     6                 18808             453744     ROMO Rocky Mountain NP 1998
+## 103     7                 26503             683467     ROMO Rocky Mountain NP 1998
+## 104     8                 35442             636460     ROMO Rocky Mountain NP 1998
+## 105     9                 20275             445728     ROMO Rocky Mountain NP 1998
+## 106    10                 13162             227638     ROMO Rocky Mountain NP 1998
+## 107    11                  7517              69927     ROMO Rocky Mountain NP 1998
+## 108    12                 11601              56555     ROMO Rocky Mountain NP 1998
+## 109     1                 12044              60871     ROMO Rocky Mountain NP 1999
+## 110     2                 11994              74798     ROMO Rocky Mountain NP 1999
+## 111     3                  9522              87163     ROMO Rocky Mountain NP 1999
+## 112     4                  2785              58644     ROMO Rocky Mountain NP 1999
+## 113     5                 12580             187697     ROMO Rocky Mountain NP 1999
+## 114     6                 13349             471035     ROMO Rocky Mountain NP 1999
+## 115     7                 37925             739167     ROMO Rocky Mountain NP 1999
+## 116     8                 22479             644694     ROMO Rocky Mountain NP 1999
+## 117     9                 24894             466394     ROMO Rocky Mountain NP 1999
+## 118    10                 10350             228197     ROMO Rocky Mountain NP 1999
+## 119    11                  8600              94367     ROMO Rocky Mountain NP 1999
+## 120    12                 13408              73296     ROMO Rocky Mountain NP 1999
+## 121     1                 11398              67728     ROMO Rocky Mountain NP 2000
+## 122     2                 11173              74328     ROMO Rocky Mountain NP 2000
+## 123     3                  9588              83498     ROMO Rocky Mountain NP 2000
+## 124     4                 14335              82564     ROMO Rocky Mountain NP 2000
+## 125     5                 12178             211790     ROMO Rocky Mountain NP 2000
+## 126     6                 24131             483925     ROMO Rocky Mountain NP 2000
+## 127     7                 39183             735598     ROMO Rocky Mountain NP 2000
+## 128     8                 27521             597407     ROMO Rocky Mountain NP 2000
+## 129     9                 11987             448191     ROMO Rocky Mountain NP 2000
+## 130    10                 11828             242240     ROMO Rocky Mountain NP 2000
+## 131    11                 10640              85145     ROMO Rocky Mountain NP 2000
+## 132    12                 10690              72978     ROMO Rocky Mountain NP 2000
+## 133     1                 15599              62319     ROMO Rocky Mountain NP 2001
+## 134     2                 13825              66820     ROMO Rocky Mountain NP 2001
+## 135     3                  8816              73736     ROMO Rocky Mountain NP 2001
+## 136     4                  7009              82007     ROMO Rocky Mountain NP 2001
+## 137     5                  3640             198797     ROMO Rocky Mountain NP 2001
+## 138     6                 21894             499970     ROMO Rocky Mountain NP 2001
+## 139     7                 40281             749500     ROMO Rocky Mountain NP 2001
+## 140     8                 27928             616789     ROMO Rocky Mountain NP 2001
+## 141     9                 12586             463160     ROMO Rocky Mountain NP 2001
+## 142    10                  6114             184616     ROMO Rocky Mountain NP 2001
+## 143    11                  9013              81020     ROMO Rocky Mountain NP 2001
+## 144    12                 11919              60951     ROMO Rocky Mountain NP 2001
+## 145     1                 14591              64696     ROMO Rocky Mountain NP 2002
+## 146     2                  9903              62365     ROMO Rocky Mountain NP 2002
+## 147     3                 11023              78997     ROMO Rocky Mountain NP 2002
+## 148     4                  6596              72485     ROMO Rocky Mountain NP 2002
+## 149     5                 14216             228491     ROMO Rocky Mountain NP 2002
+## 150     6                 16700             491045     ROMO Rocky Mountain NP 2002
+## 151     7                 17503             653677     ROMO Rocky Mountain NP 2002
+## 152     8                 18637             598693     ROMO Rocky Mountain NP 2002
+## 153     9                 13349             428493     ROMO Rocky Mountain NP 2002
+## 154    10                 10403             183445     ROMO Rocky Mountain NP 2002
+## 155    11                  9214              57455     ROMO Rocky Mountain NP 2002
+## 156    12                  7457              68633     ROMO Rocky Mountain NP 2002
+## 157     1                 31849              61472     ROMO Rocky Mountain NP 2003
+## 158     2                  6653              48224     ROMO Rocky Mountain NP 2003
+## 159     3                  7614              63999     ROMO Rocky Mountain NP 2003
+## 160     4                  3246              69226     ROMO Rocky Mountain NP 2003
+## 161     5                 18581             198771     ROMO Rocky Mountain NP 2003
+## 162     6                 17137             457861     ROMO Rocky Mountain NP 2003
+## 163     7                 17374             678086     ROMO Rocky Mountain NP 2003
+## 164     8                 24696             626473     ROMO Rocky Mountain NP 2003
+## 165     9                 17626             465941     ROMO Rocky Mountain NP 2003
+## 166    10                 15161             262699     ROMO Rocky Mountain NP 2003
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 218 rows ]</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="functions.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unit_visitation</span>(<span class="at">park=</span><span class="st">&quot;EVER&quot;</span>,<span class="at">startmonth=</span> <span class="st">&quot;01&quot;</span>,<span class="at">startyear=</span><span class="st">&quot;1990&quot;</span>, <span class="at">endmonth=</span> <span class="st">&quot;12&quot;</span>, <span class="at">endyear=</span> <span class="st">&quot;2021&quot;</span>)</span></code></pre></div>
+<pre><code>##     Month NonRecreationVisitors RecreationVisitors UnitCode      UnitName Year
+## 1       1                  5223             122121     EVER Everglades NP 1990
+## 2       2                  4518             131994     EVER Everglades NP 1990
+## 3       3                  5120             132341     EVER Everglades NP 1990
+## 4       4                  4225             111298     EVER Everglades NP 1990
+## 5       5                  3314              46134     EVER Everglades NP 1990
+## 6       6                  3100              46676     EVER Everglades NP 1990
+## 7       7                  3177              49461     EVER Everglades NP 1990
+## 8       8                  3153              54334     EVER Everglades NP 1990
+## 9       9                  2572              44768     EVER Everglades NP 1990
+## 10     10                  2607              48656     EVER Everglades NP 1990
+## 11     11                  3170              75518     EVER Everglades NP 1990
+## 12     12                  4005              94624     EVER Everglades NP 1990
+## 13      1                  6350             138817     EVER Everglades NP 1991
+## 14      2                  5255             149194     EVER Everglades NP 1991
+## 15      3                  5762             150641     EVER Everglades NP 1991
+## 16      4                  5067             110235     EVER Everglades NP 1991
+## 17      5                  3762              94660     EVER Everglades NP 1991
+## 18      6                  4143              68937     EVER Everglades NP 1991
+## 19      7                  4121              61878     EVER Everglades NP 1991
+## 20      8                  3860              71602     EVER Everglades NP 1991
+## 21      9                  3599              81298     EVER Everglades NP 1991
+## 22     10                  4058              86312     EVER Everglades NP 1991
+## 23     11                  4586             126458     EVER Everglades NP 1991
+## 24     12                  5066             151982     EVER Everglades NP 1991
+## 25      1                  6623             142197     EVER Everglades NP 1992
+## 26      2                  5745             163917     EVER Everglades NP 1992
+## 27      3                  6518             158688     EVER Everglades NP 1992
+## 28      4                  5067             126842     EVER Everglades NP 1992
+## 29      5                  4095             100595     EVER Everglades NP 1992
+## 30      6                  3896              59923     EVER Everglades NP 1992
+## 31      7                  4011              70128     EVER Everglades NP 1992
+## 32      8                  2615              59786     EVER Everglades NP 1992
+## 33      9                     0               7610     EVER Everglades NP 1992
+## 34     10                     0              23820     EVER Everglades NP 1992
+## 35     11                     0              30644     EVER Everglades NP 1992
+## 36     12                   101              81536     EVER Everglades NP 1992
+## 37      1                  7386             106855     EVER Everglades NP 1993
+## 38      2                  7199             119887     EVER Everglades NP 1993
+## 39      3                  8078             121353     EVER Everglades NP 1993
+## 40      4                  7478              96384     EVER Everglades NP 1993
+## 41      5                  7178              76531     EVER Everglades NP 1993
+## 42      6                  6816              62341     EVER Everglades NP 1993
+## 43      7                  6752              66214     EVER Everglades NP 1993
+## 44      8                  6317              61743     EVER Everglades NP 1993
+## 45      9                  6773              51114     EVER Everglades NP 1993
+## 46     10                  7322              58058     EVER Everglades NP 1993
+## 47     11                  7899              67870     EVER Everglades NP 1993
+## 48     12                  8739              85356     EVER Everglades NP 1993
+## 49      1                  8879             103824     EVER Everglades NP 1994
+## 50      2                  8846             114850     EVER Everglades NP 1994
+## 51      3                 10365             121521     EVER Everglades NP 1994
+## 52      4                  8670              95785     EVER Everglades NP 1994
+## 53      5                  7622              65038     EVER Everglades NP 1994
+## 54      6                  7403              44801     EVER Everglades NP 1994
+## 55      7                  6521              51623     EVER Everglades NP 1994
+## 56      8                  7712              47314     EVER Everglades NP 1994
+## 57      9                  7107              47692     EVER Everglades NP 1994
+## 58     10                  7203              58634     EVER Everglades NP 1994
+## 59     11                  7250              64073     EVER Everglades NP 1994
+## 60     12                  7911              71300     EVER Everglades NP 1994
+## 61      1                  8696              93967     EVER Everglades NP 1995
+## 62      2                  7994             110040     EVER Everglades NP 1995
+## 63      3                  8585             110731     EVER Everglades NP 1995
+## 64      4                  8285              91298     EVER Everglades NP 1995
+## 65      5                  7917              67638     EVER Everglades NP 1995
+## 66      6                  7716              46409     EVER Everglades NP 1995
+## 67      7                  6429              52860     EVER Everglades NP 1995
+## 68      8                  6687              50107     EVER Everglades NP 1995
+## 69      9                  6666              50551     EVER Everglades NP 1995
+## 70     10                  7665              51712     EVER Everglades NP 1995
+## 71     11                  7400              57410     EVER Everglades NP 1995
+## 72     12                  4857              37743     EVER Everglades NP 1995
+## 73      1                  8039              65868     EVER Everglades NP 1996
+## 74      2                  8927             124372     EVER Everglades NP 1996
+## 75      3                  9716             110571     EVER Everglades NP 1996
+## 76      4                  8720              97373     EVER Everglades NP 1996
+## 77      5                  8943              71766     EVER Everglades NP 1996
+## 78      6                  7661              46886     EVER Everglades NP 1996
+## 79      7                  8262              51640     EVER Everglades NP 1996
+## 80      8                  7530              55346     EVER Everglades NP 1996
+## 81      9                  6584              51386     EVER Everglades NP 1996
+## 82     10                  7493              52018     EVER Everglades NP 1996
+## 83     11                  7065              73584     EVER Everglades NP 1996
+## 84     12                  5718              89357     EVER Everglades NP 1996
+## 85      1                  7490             102559     EVER Everglades NP 1997
+## 86      2                  6375             128164     EVER Everglades NP 1997
+## 87      3                  6690             132529     EVER Everglades NP 1997
+## 88      4                  5478              88382     EVER Everglades NP 1997
+## 89      5                  4893              72557     EVER Everglades NP 1997
+## 90      6                  4670              49464     EVER Everglades NP 1997
+## 91      7                  4173              55966     EVER Everglades NP 1997
+## 92      8                  3581              59598     EVER Everglades NP 1997
+## 93      9                  4067              45536     EVER Everglades NP 1997
+## 94     10                  4719              79997     EVER Everglades NP 1997
+## 95     11                  5025              85065     EVER Everglades NP 1997
+## 96     12                  5259              89715     EVER Everglades NP 1997
+## 97      1                  8039             118179     EVER Everglades NP 1998
+## 98      2                  5753             128335     EVER Everglades NP 1998
+## 99      3                  6168             130692     EVER Everglades NP 1998
+## 100     4                  5289             105733     EVER Everglades NP 1998
+## 101     5                  5022              94166     EVER Everglades NP 1998
+## 102     6                  4523              66404     EVER Everglades NP 1998
+## 103     7                  4298              76686     EVER Everglades NP 1998
+## 104     8                  4202              82053     EVER Everglades NP 1998
+## 105     9                  2922              56280     EVER Everglades NP 1998
+## 106    10                  3785              72328     EVER Everglades NP 1998
+## 107    11                  4449              92830     EVER Everglades NP 1998
+## 108    12                  4812              94529     EVER Everglades NP 1998
+## 109     1                  5801             118341     EVER Everglades NP 1999
+## 110     2                  5750             139935     EVER Everglades NP 1999
+## 111     3                  6240             145592     EVER Everglades NP 1999
+## 112     4                  5627             118254     EVER Everglades NP 1999
+## 113     5                  5582              82388     EVER Everglades NP 1999
+## 114     6                  6807              64672     EVER Everglades NP 1999
+## 115     7                  5999              68994     EVER Everglades NP 1999
+## 116     8                  5664              68676     EVER Everglades NP 1999
+## 117     9                  4674              58989     EVER Everglades NP 1999
+## 118    10                  4736              57213     EVER Everglades NP 1999
+## 119    11                  5163              73757     EVER Everglades NP 1999
+## 120    12                  5418              77171     EVER Everglades NP 1999
+## 121     1                  6138             109488     EVER Everglades NP 2000
+## 122     2                  6368             131302     EVER Everglades NP 2000
+## 123     3                  6225             127298     EVER Everglades NP 2000
+## 124     4                  5523             100648     EVER Everglades NP 2000
+## 125     5                  5789              81748     EVER Everglades NP 2000
+## 126     6                  5040              44130     EVER Everglades NP 2000
+## 127     7                  5085              41367     EVER Everglades NP 2000
+## 128     8                  5459              56499     EVER Everglades NP 2000
+## 129     9                  5256              58225     EVER Everglades NP 2000
+## 130    10                  5523              73489     EVER Everglades NP 2000
+## 131    11                  4290              83271     EVER Everglades NP 2000
+## 132    12                  4542              87925     EVER Everglades NP 2000
+## 133     1                  6188             130610     EVER Everglades NP 2001
+## 134     2                  5058             159927     EVER Everglades NP 2001
+## 135     3                  5828             142544     EVER Everglades NP 2001
+## 136     4                  4935             105186     EVER Everglades NP 2001
+## 137     5                  6057              78059     EVER Everglades NP 2001
+## 138     6                  5270              63953     EVER Everglades NP 2001
+## 139     7                  4062              61905     EVER Everglades NP 2001
+## 140     8                  4310              52413     EVER Everglades NP 2001
+## 141     9                  3782              40968     EVER Everglades NP 2001
+## 142    10                  4206              54878     EVER Everglades NP 2001
+## 143    11                  4494              70801     EVER Everglades NP 2001
+## 144    12                  4349              88607     EVER Everglades NP 2001
+## 145     1                  6188             116699     EVER Everglades NP 2002
+## 146     2                  5361             123767     EVER Everglades NP 2002
+## 147     3                 14637             138066     EVER Everglades NP 2002
+## 148     4                  5640              90924     EVER Everglades NP 2002
+## 149     5                  4635              59925     EVER Everglades NP 2002
+## 150     6                  4497              46614     EVER Everglades NP 2002
+## 151     7                  4122              52050     EVER Everglades NP 2002
+## 152     8                  4433              51891     EVER Everglades NP 2002
+## 153     9                  4131              46264     EVER Everglades NP 2002
+## 154    10                  4626              82933     EVER Everglades NP 2002
+## 155    11                  4883              76566     EVER Everglades NP 2002
+## 156    12                  5820              83210     EVER Everglades NP 2002
+## 157     1                  6998             116320     EVER Everglades NP 2003
+## 158     2                  6260             131014     EVER Everglades NP 2003
+## 159     3                  6905             135722     EVER Everglades NP 2003
+## 160     4                  6171              94008     EVER Everglades NP 2003
+## 161     5                  5058              68448     EVER Everglades NP 2003
+## 162     6                  3578              58174     EVER Everglades NP 2003
+## 163     7                  3362              64537     EVER Everglades NP 2003
+## 164     8                  3188              65496     EVER Everglades NP 2003
+## 165     9                  3096              55460     EVER Everglades NP 2003
+## 166    10                  4289              70974     EVER Everglades NP 2003
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 218 rows ]</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="functions.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unit_visitation</span>(<span class="at">park=</span><span class="st">&quot;THRO&quot;</span>,<span class="at">startmonth=</span> <span class="st">&quot;01&quot;</span>,<span class="at">startyear=</span><span class="st">&quot;1990&quot;</span>, <span class="at">endmonth=</span> <span class="st">&quot;12&quot;</span>, <span class="at">endyear=</span> <span class="st">&quot;2021&quot;</span>)</span></code></pre></div>
+<pre><code>##     Month NonRecreationVisitors RecreationVisitors UnitCode              UnitName
+## 1       1                   434               1044     THRO Theodore Roosevelt NP
+## 2       2                   434               1339     THRO Theodore Roosevelt NP
+## 3       3                   434               3636     THRO Theodore Roosevelt NP
+## 4       4                   623              16226     THRO Theodore Roosevelt NP
+## 5       5                   623              39255     THRO Theodore Roosevelt NP
+## 6       6                   623              88320     THRO Theodore Roosevelt NP
+## 7       7                   623             131586     THRO Theodore Roosevelt NP
+## 8       8                   623             118057     THRO Theodore Roosevelt NP
+## 9       9                   623              46139     THRO Theodore Roosevelt NP
+## 10     10                   623               9207     THRO Theodore Roosevelt NP
+## 11     11                   434               4326     THRO Theodore Roosevelt NP
+## 12     12                   434               1583     THRO Theodore Roosevelt NP
+## 13      1                   434               1387     THRO Theodore Roosevelt NP
+## 14      2                   434               1462     THRO Theodore Roosevelt NP
+## 15      3                   434               4332     THRO Theodore Roosevelt NP
+## 16      4                   623              13501     THRO Theodore Roosevelt NP
+## 17      5                   623              34713     THRO Theodore Roosevelt NP
+## 18      6                   623              83363     THRO Theodore Roosevelt NP
+## 19      7                   623             127724     THRO Theodore Roosevelt NP
+## 20      8                   623             129336     THRO Theodore Roosevelt NP
+## 21      9                   623              45886     THRO Theodore Roosevelt NP
+## 22     10                   623              20626     THRO Theodore Roosevelt NP
+## 23     11                   434               5220     THRO Theodore Roosevelt NP
+## 24     12                   434               1376     THRO Theodore Roosevelt NP
+## 25      1                   417                909     THRO Theodore Roosevelt NP
+## 26      2                   417               1026     THRO Theodore Roosevelt NP
+## 27      3                   472               3663     THRO Theodore Roosevelt NP
+## 28      4                   622              15052     THRO Theodore Roosevelt NP
+## 29      5                   623              35418     THRO Theodore Roosevelt NP
+## 30      6                   623              82069     THRO Theodore Roosevelt NP
+## 31      7                   622             134524     THRO Theodore Roosevelt NP
+## 32      8                   621             130518     THRO Theodore Roosevelt NP
+## 33      9                   624              47515     THRO Theodore Roosevelt NP
+## 34     10                   482              20176     THRO Theodore Roosevelt NP
+## 35     11                   472               4435     THRO Theodore Roosevelt NP
+## 36     12                   417                632     THRO Theodore Roosevelt NP
+## 37      1                   417                748     THRO Theodore Roosevelt NP
+## 38      2                   417                814     THRO Theodore Roosevelt NP
+## 39      3                   472               2212     THRO Theodore Roosevelt NP
+## 40      4                   622              14042     THRO Theodore Roosevelt NP
+## 41      5                   623              37693     THRO Theodore Roosevelt NP
+## 42      6                   623              80340     THRO Theodore Roosevelt NP
+## 43      7                   622             125177     THRO Theodore Roosevelt NP
+## 44      8                   621             136519     THRO Theodore Roosevelt NP
+## 45      9                   624              49363     THRO Theodore Roosevelt NP
+## 46     10                   482              22456     THRO Theodore Roosevelt NP
+## 47     11                   472               4789     THRO Theodore Roosevelt NP
+## 48     12                   417               1007     THRO Theodore Roosevelt NP
+## 49      1                   417                894     THRO Theodore Roosevelt NP
+## 50      2                   417                933     THRO Theodore Roosevelt NP
+## 51      3                   472               2884     THRO Theodore Roosevelt NP
+## 52      4                   622              16714     THRO Theodore Roosevelt NP
+## 53      5                   623              41432     THRO Theodore Roosevelt NP
+## 54      6                   623              85653     THRO Theodore Roosevelt NP
+## 55      7                   622             141375     THRO Theodore Roosevelt NP
+## 56      8                   621             130386     THRO Theodore Roosevelt NP
+## 57      9                   624              56071     THRO Theodore Roosevelt NP
+## 58     10                   482              22176     THRO Theodore Roosevelt NP
+## 59     11                   472               5667     THRO Theodore Roosevelt NP
+## 60     12                   417               1164     THRO Theodore Roosevelt NP
+## 61      1                   417               1058     THRO Theodore Roosevelt NP
+## 62      2                   417               1688     THRO Theodore Roosevelt NP
+## 63      3                   472               2020     THRO Theodore Roosevelt NP
+## 64      4                   622              12437     THRO Theodore Roosevelt NP
+## 65      5                   623              37140     THRO Theodore Roosevelt NP
+## 66      6                   623              62012     THRO Theodore Roosevelt NP
+## 67      7                   622             126108     THRO Theodore Roosevelt NP
+## 68      8                   621             125332     THRO Theodore Roosevelt NP
+## 69      9                   624              59467     THRO Theodore Roosevelt NP
+## 70     10                   482              25065     THRO Theodore Roosevelt NP
+## 71     11                   472               7819     THRO Theodore Roosevelt NP
+## 72     12                   417                553     THRO Theodore Roosevelt NP
+## 73      1                   417                712     THRO Theodore Roosevelt NP
+## 74      2                   417               1752     THRO Theodore Roosevelt NP
+## 75      3                   472               2822     THRO Theodore Roosevelt NP
+## 76      4                   622              16940     THRO Theodore Roosevelt NP
+## 77      5                   623              43424     THRO Theodore Roosevelt NP
+## 78      6                   623              58352     THRO Theodore Roosevelt NP
+## 79      7                   622              99750     THRO Theodore Roosevelt NP
+## 80      8                   621             122566     THRO Theodore Roosevelt NP
+## 81      9                   624              53108     THRO Theodore Roosevelt NP
+## 82     10                   482              27333     THRO Theodore Roosevelt NP
+## 83     11                   472               8528     THRO Theodore Roosevelt NP
+## 84     12                   417                794     THRO Theodore Roosevelt NP
+## 85      1                   417                814     THRO Theodore Roosevelt NP
+## 86      2                   417               1676     THRO Theodore Roosevelt NP
+## 87      3                   472               2519     THRO Theodore Roosevelt NP
+## 88      4                   622              10127     THRO Theodore Roosevelt NP
+## 89      5                   623              29261     THRO Theodore Roosevelt NP
+## 90      6                   623              61553     THRO Theodore Roosevelt NP
+## 91      7                   622              93687     THRO Theodore Roosevelt NP
+## 92      8                   621             108501     THRO Theodore Roosevelt NP
+## 93      9                   624              52435     THRO Theodore Roosevelt NP
+## 94     10                   482              24610     THRO Theodore Roosevelt NP
+## 95     11                   472               5512     THRO Theodore Roosevelt NP
+## 96     12                   417               2570     THRO Theodore Roosevelt NP
+## 97      1                   417               3211     THRO Theodore Roosevelt NP
+## 98      2                   417               3222     THRO Theodore Roosevelt NP
+## 99      3                   472               2225     THRO Theodore Roosevelt NP
+## 100     4                   622              17438     THRO Theodore Roosevelt NP
+## 101     5                   623              40643     THRO Theodore Roosevelt NP
+## 102     6                   623              76842     THRO Theodore Roosevelt NP
+## 103     7                   622             106388     THRO Theodore Roosevelt NP
+## 104     8                   621             111675     THRO Theodore Roosevelt NP
+## 105     9                   624              54891     THRO Theodore Roosevelt NP
+## 106    10                   482              23752     THRO Theodore Roosevelt NP
+## 107    11                   472               6885     THRO Theodore Roosevelt NP
+## 108    12                   417               1114     THRO Theodore Roosevelt NP
+## 109     1                   472               1167     THRO Theodore Roosevelt NP
+## 110     2                   472               1464     THRO Theodore Roosevelt NP
+## 111     3                   472               2921     THRO Theodore Roosevelt NP
+## 112     4                   622              20194     THRO Theodore Roosevelt NP
+## 113     5                   623              30590     THRO Theodore Roosevelt NP
+## 114     6                   623              71375     THRO Theodore Roosevelt NP
+## 115     7                   622             102566     THRO Theodore Roosevelt NP
+## 116     8                   621             110667     THRO Theodore Roosevelt NP
+## 117     9                   624              51527     THRO Theodore Roosevelt NP
+## 118    10                   483              27695     THRO Theodore Roosevelt NP
+## 119    11                   472               9617     THRO Theodore Roosevelt NP
+## 120    12                   472               1528     THRO Theodore Roosevelt NP
+## 121     1                   472               1039     THRO Theodore Roosevelt NP
+## 122     2                   472               1037     THRO Theodore Roosevelt NP
+## 123     3                   472               4073     THRO Theodore Roosevelt NP
+## 124     4                   622              16264     THRO Theodore Roosevelt NP
+## 125     5                   623              41394     THRO Theodore Roosevelt NP
+## 126     6                   623              64396     THRO Theodore Roosevelt NP
+## 127     7                   622             116569     THRO Theodore Roosevelt NP
+## 128     8                   621             101706     THRO Theodore Roosevelt NP
+## 129     9                   624              55362     THRO Theodore Roosevelt NP
+## 130    10                   483              22097     THRO Theodore Roosevelt NP
+## 131    11                   472               7138     THRO Theodore Roosevelt NP
+## 132    12                   472                738     THRO Theodore Roosevelt NP
+## 133     1                   472                625     THRO Theodore Roosevelt NP
+## 134     2                   472                583     THRO Theodore Roosevelt NP
+## 135     3                   472               1706     THRO Theodore Roosevelt NP
+## 136     4                   622              15367     THRO Theodore Roosevelt NP
+## 137     5                   623              34347     THRO Theodore Roosevelt NP
+## 138     6                   623              70200     THRO Theodore Roosevelt NP
+## 139     7                   622             117441     THRO Theodore Roosevelt NP
+## 140     8                   621             114881     THRO Theodore Roosevelt NP
+## 141     9                   624              56866     THRO Theodore Roosevelt NP
+## 142    10                   483              26244     THRO Theodore Roosevelt NP
+## 143    11                   472               7556     THRO Theodore Roosevelt NP
+## 144    12                   472                793     THRO Theodore Roosevelt NP
+## 145     1                   472                672     THRO Theodore Roosevelt NP
+## 146     2                   472                646     THRO Theodore Roosevelt NP
+## 147     3                   472               1745     THRO Theodore Roosevelt NP
+## 148     4                   622              15680     THRO Theodore Roosevelt NP
+## 149     5                   623              35473     THRO Theodore Roosevelt NP
+## 150     6                   623              76734     THRO Theodore Roosevelt NP
+## 151     7                   622             120464     THRO Theodore Roosevelt NP
+## 152     8                   621             119915     THRO Theodore Roosevelt NP
+## 153     9                   624              65289     THRO Theodore Roosevelt NP
+## 154    10                   483              25478     THRO Theodore Roosevelt NP
+## 155    11                   472               8484     THRO Theodore Roosevelt NP
+## 156    12                   472                971     THRO Theodore Roosevelt NP
+## 157     1                   472               1334     THRO Theodore Roosevelt NP
+## 158     2                   472               1682     THRO Theodore Roosevelt NP
+## 159     3                   472               2425     THRO Theodore Roosevelt NP
+## 160     4                   622              18106     THRO Theodore Roosevelt NP
+## 161     5                   623              37445     THRO Theodore Roosevelt NP
+## 162     6                   623              78469     THRO Theodore Roosevelt NP
+## 163     7                   622             114219     THRO Theodore Roosevelt NP
+## 164     8                   621             116140     THRO Theodore Roosevelt NP
+## 165     9                   624              72031     THRO Theodore Roosevelt NP
+## 166    10                   483              36908     THRO Theodore Roosevelt NP
+##     Year
+## 1   1990
+## 2   1990
+## 3   1990
+## 4   1990
+## 5   1990
+## 6   1990
+## 7   1990
+## 8   1990
+## 9   1990
+## 10  1990
+## 11  1990
+## 12  1990
+## 13  1991
+## 14  1991
+## 15  1991
+## 16  1991
+## 17  1991
+## 18  1991
+## 19  1991
+## 20  1991
+## 21  1991
+## 22  1991
+## 23  1991
+## 24  1991
+## 25  1992
+## 26  1992
+## 27  1992
+## 28  1992
+## 29  1992
+## 30  1992
+## 31  1992
+## 32  1992
+## 33  1992
+## 34  1992
+## 35  1992
+## 36  1992
+## 37  1993
+## 38  1993
+## 39  1993
+## 40  1993
+## 41  1993
+## 42  1993
+## 43  1993
+## 44  1993
+## 45  1993
+## 46  1993
+## 47  1993
+## 48  1993
+## 49  1994
+## 50  1994
+## 51  1994
+## 52  1994
+## 53  1994
+## 54  1994
+## 55  1994
+## 56  1994
+## 57  1994
+## 58  1994
+## 59  1994
+## 60  1994
+## 61  1995
+## 62  1995
+## 63  1995
+## 64  1995
+## 65  1995
+## 66  1995
+## 67  1995
+## 68  1995
+## 69  1995
+## 70  1995
+## 71  1995
+## 72  1995
+## 73  1996
+## 74  1996
+## 75  1996
+## 76  1996
+## 77  1996
+## 78  1996
+## 79  1996
+## 80  1996
+## 81  1996
+## 82  1996
+## 83  1996
+## 84  1996
+## 85  1997
+## 86  1997
+## 87  1997
+## 88  1997
+## 89  1997
+## 90  1997
+## 91  1997
+## 92  1997
+## 93  1997
+## 94  1997
+## 95  1997
+## 96  1997
+## 97  1998
+## 98  1998
+## 99  1998
+## 100 1998
+## 101 1998
+## 102 1998
+## 103 1998
+## 104 1998
+## 105 1998
+## 106 1998
+## 107 1998
+## 108 1998
+## 109 1999
+## 110 1999
+## 111 1999
+## 112 1999
+## 113 1999
+## 114 1999
+## 115 1999
+## 116 1999
+## 117 1999
+## 118 1999
+## 119 1999
+## 120 1999
+## 121 2000
+## 122 2000
+## 123 2000
+## 124 2000
+## 125 2000
+## 126 2000
+## 127 2000
+## 128 2000
+## 129 2000
+## 130 2000
+## 131 2000
+## 132 2000
+## 133 2001
+## 134 2001
+## 135 2001
+## 136 2001
+## 137 2001
+## 138 2001
+## 139 2001
+## 140 2001
+## 141 2001
+## 142 2001
+## 143 2001
+## 144 2001
+## 145 2002
+## 146 2002
+## 147 2002
+## 148 2002
+## 149 2002
+## 150 2002
+## 151 2002
+## 152 2002
+## 153 2002
+## 154 2002
+## 155 2002
+## 156 2002
+## 157 2003
+## 158 2003
+## 159 2003
+## 160 2003
+## 161 2003
+## 162 2003
+## 163 2003
+## 164 2003
+## 165 2003
+## 166 2003
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 218 rows ]</code></pre>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="apis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="iterations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
